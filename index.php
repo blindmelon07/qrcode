@@ -1,4 +1,4 @@
-<?php  session_start(); ?>
+<?php  //session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,20 +15,7 @@
         <div class="row">
             <div class="col-md-6">
                 <video id="preview" width="100%"></video>
-                <?php 
-                if(isset($_SESSION['error'])){
-                    echo "<div class='alert alert-danger'>
-                    <h4>ERROR!</h4>
-                    ".$_SESSION['error']."
-                    ";
-                }
-                if(isset($_SESSION['success'])){
-                    echo "<div class='alert alert-primary'>
-                    <h4>SUCCESS!</h4>
-                    ".$_SESSION['success']."
-                    ";
-                }
-                ?>
+            
             </div>
             <div class="col-md-6">
                 <form action="insert.php" method="post" id="form1" class="form-horizontal">
