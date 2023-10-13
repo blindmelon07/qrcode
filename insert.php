@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 $server = "localhost";
 $username = "root";
 $password = "";
@@ -15,10 +15,10 @@ if (isset($_POST['text'])) {
     $text = $_POST['text'];
     $sql = "INSERT INTO  attendance(name,timein) values('$text',NOW())";
     if ($conn->query($sql) === true) {
-        echo "Successfully Inserted";
+       $_SESSION['success'] = 'Attendance added succesfully';
     } else {
-       echo "Error:" . $sql . "<br" . $conn->error;  
+       $_SESSION['error'] = $conn->error;
     }
 }
-$conn->close();
+header("location: index.php");
 ?>
